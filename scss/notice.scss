@@ -81,12 +81,13 @@ body {
 }
 
 .container-bg {
-  background: linear-gradient(
-      to bottom,
-      rgba(248, 204, 204, 1) 0%,
-      rgba(255, 255, 255, 1) 100%
-    )
-    no-repeat;
+  // background: linear-gradient(
+  //     to bottom,
+  //     rgba(248, 204, 204, 1) 0%,
+  //     rgba(255, 255, 255, 1) 100%
+  //   )
+  //   no-repeat;
+  background: url("../images/bg-pink.png") repeat-x;
 }
 #container {
   max-width: 1074px;
@@ -300,7 +301,7 @@ body {
       display: inline-block;
       padding-left: 65px;
       color: #555;
-      &:first-child{
+      &:first-child {
         padding-left: 0;
       }
       em {
