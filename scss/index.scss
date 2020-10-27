@@ -141,23 +141,6 @@ body {
   }
 }
 #container {
-  // .h-icon {
-  //   margin-bottom: 26px;
-  //   > img {
-  //     top: 0;
-  //     left: 0;
-  //     width: 24px;
-  //     height: 18px;
-  //     margin-top: 6px;
-  //   }
-  //   .h-icon-bst {
-  //     > img {
-  //       width: 16px;
-  //       height: 17px;
-  //       margin-top: 5px;
-  //     }
-  //   }
-  // }
   .cont-h2 {
     color: $mainColor-1;
     font-size: 28px;
@@ -298,20 +281,62 @@ body {
   }
   .main-contain-3 {
     position: relative;
-    overflow: hidden;
     margin-bottom: 80px;
-    .hot-list {
-      > p {
-        display: inline-block;
-        padding-right: 20px;
-      }
-      p {
-        &:nth-of-type(4) {
-          padding-right: 0;
+    .more {
+      a {
+        &:after {
+          background-color: transparent !important;
         }
       }
-      .more {
-        padding-right: 0;
+    }
+    a {
+      display: block;
+      position: relative;
+      overflow: hidden;
+      span {
+        color: #fff;
+        position: absolute;
+        left: 0;
+        bottom: -500px;
+        width: 100%;
+        height: 50px;
+        padding: 10px;
+        transition: all 0.2s ease-in;
+        z-index: 1;
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        opacity: 0;
+        transition: all 0.2s ease-in;
+      }
+      &:hover {
+        span {
+          bottom: 100px;
+        }
+        &:after {
+          opacity: 0.5;
+        }
+      }
+    }
+    .scroll-wrap {
+      .hot-list {
+        > p {
+          display: inline-block;
+          padding-right: 20px;
+        }
+        p {
+          &:nth-of-type(4) {
+            padding-right: 0;
+          }
+        }
+        .more {
+          padding-right: 0;
+        }
       }
     }
     .more {
@@ -428,9 +453,8 @@ body {
     }
   }
 }
-
-//Tablet & Mobile (721~1073)
-@media (max-width: 1073px) and (max-width: 1073px) {
+//Tablet (~1073)
+@media (max-width: 1073px) {
   #header {
     position: relative;
     height: 105px;
@@ -593,19 +617,21 @@ body {
     .visual-slide {
       > li {
         a {
-          font-size: 50px;
+          font-size: 75px;
           height: 0;
           padding-bottom: 36%;
           background-size: contain;
           .visual-txt-1 {
-            top: 110px;
+            top: 140px;
           }
           .visual-txt-2 {
             display: none;
+            font-size: 30px;
           }
         }
         h1 {
           position: static;
+          font-size: 70px;
         }
       }
     }
@@ -633,6 +659,37 @@ body {
         }
       }
     }
+    .main-contain-3 {
+      a {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        span {
+          color: #fff;
+          position: absolute;
+          left: 0;
+          bottom: 13px;
+          width: 100%;
+          height: 50px;
+          padding: 10px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+        &:after {
+          content: "";
+          position: absolute;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: #000;
+          opacity: 0.7;
+        }
+        &:hover {
+          display: none;
+        }
+      }
+    }
   }
   .scroll-wrap {
     width: 100%;
@@ -654,6 +711,14 @@ body {
     p {
       &:nth-of-type(4) {
         padding-right: 0;
+      }
+    }
+  }
+  .main-contain-3 {
+    a {
+      span {
+        bottom: 0;
+        color: #222;
       }
     }
   }
@@ -686,6 +751,9 @@ body {
     }
   }
 }
+//Tablet & Mobile (721~1073)
+@media (min-width: 721px) and (max-width: 1073px) {
+}
 
 //Mobile (~720)
 @media (max-width: 720px) {
@@ -696,10 +764,10 @@ body {
         a {
           padding-bottom: 32%;
           h1 {
-            font-size: 30px;
+            font-size: 9.52vw;
           }
           .visual-txt-1 {
-            font-size: 14px;
+            font-size: 3.05vw;
             position: static;
             margin-top: 10px;
           }
@@ -710,8 +778,54 @@ body {
       margin-top: 20px;
     }
   }
+  #container {
+    .main-contain-3 {
+      position: relative;
+      margin-bottom: 80px;
+      .scroll-wrap {
+        .hot-list {
+          > p {
+            display: inline-block;
+            padding-right: 20px;
+          }
+          p {
+            &:nth-of-type(4) {
+              padding-right: 0;
+            }
+          }
+          .more {
+            padding-right: 0;
+          }
+        }
+      }
+      .more {
+        position: absolute;
+        top: 9px;
+        right: 0;
+        padding-right: 0;
+      }
+      .cont-h2 {
+        &::before {
+          content: "";
+          width: 30px;
+          height: 30px;
+          background: url("../images/icon-clip.png") center no-repeat;
+          position: absolute;
+          left: -34px;
+          top: 0;
+        }
+      }
+    }
+  }
   .main-contain-4 {
+    .cont-h2 {
+      font-size: 16px;
+      top: 11px;
+    }
     .notice-more-1 {
+      left: 75px;
+      width: calc(100% - 120px);
+      padding-right: 0;
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
