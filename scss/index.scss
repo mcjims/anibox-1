@@ -457,7 +457,6 @@ body {
 @media (max-width: 1073px) {
   #header {
     position: relative;
-    height: 105px;
     .logo {
       position: absolute;
       top: 0;
@@ -685,9 +684,9 @@ body {
           background-color: #000;
           opacity: 0.7;
         }
-        &:hover {
-          display: none;
-        }
+        // &:hover {
+        //   display: none;
+        // }
       }
     }
   }
@@ -704,10 +703,6 @@ body {
     width: 1074px;
     white-space: nowrap;
     overflow: auto;
-    > p {
-      display: inline-block;
-      padding-right: 20px;
-    }
     p {
       &:nth-of-type(4) {
         padding-right: 0;
@@ -784,10 +779,6 @@ body {
       margin-bottom: 80px;
       .scroll-wrap {
         .hot-list {
-          > p {
-            display: inline-block;
-            padding-right: 20px;
-          }
           p {
             &:nth-of-type(4) {
               padding-right: 0;
